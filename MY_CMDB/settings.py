@@ -153,7 +153,7 @@ REDIS_CONN = {
     'HOST':'192.168.244.128',
     'PORT':6379,
     'DB':0,
-    'PASSWORD':'meiyoumima',
+    'PASSWORD':'123456',
 }
 
 STATUS_DATA_OPTIMIZATION = {
@@ -172,7 +172,7 @@ EMAIL_USE_TLS = False
 EMAIL_HOST = 'smtp.exmail.qq.com'
 EMAIL_PORT = 25
 EMAIL_HOST_USER = 'czk@126.com'
-EMAIL_HOST_PASSWORD = 'meiyoumima'
+EMAIL_HOST_PASSWORD = '123456'
 DEFAULT_FROM_EMAIL = 'czk<czk@126.com>'
 
 REPORT_LATE_TOLERANCE_TIME = 10 #allow service report late than monitor interval no more than defined seconds.
