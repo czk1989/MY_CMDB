@@ -1,0 +1,44 @@
+{% extends 'layout/eye_layout.html' %}
+
+
+
+
+{% block conent %}
+    <ol class="breadcrumb" style="margin-bottom: 0;">
+        <li><a href="/eye/">首页</a></li>
+        <li class="">审计</li>
+        <li class="">审计日志表</li>
+        <li class="active">审计详情</li>
+    </ol>
+
+    <div style="padding: 5px 8px;">
+
+        <table class="table ">
+            <thead>
+                <tr>
+                    <th>id</th>
+                    <th>日期</th>
+                    <th>命令</th>
+
+
+                </tr>
+            </thead>
+
+            <tbody>
+                {% for cmd in cmd_list %}
+                    <tr>
+                        <td>{{ forloop.counter }}</td>
+                        <td>{{ cmd.0 }}</td>
+                        <td>{{ cmd.1 }}</td>
+
+                    </tr>
+                {% endfor %}
+            </tbody>
+
+        </table>
+
+    </div>
+
+{% endblock %}
+
+

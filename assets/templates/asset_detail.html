@@ -1,0 +1,49 @@
+{% extends 'layout/assets_layout.html' %}
+
+{% block conent %}
+    <ol class="breadcrumb" style="margin-bottom: 0;">
+        <li><a href="/cmdb/">首页</a></li>
+        <li><a href="/cmdb/asset/">资产信息</a></li>
+        <li class="active">详细</li>
+
+
+    </ol>
+    <div style="padding: 5px 8px;">
+
+        <div class="list-block">
+
+                <div><label>ID:{{ obj.id }}</label></div>
+                <div><label>服务器名称:{{ obj.server.hostname }}</label></div>
+                <div><label>资产类型:{{ obj.get_device_type_id_display }}</label></div>
+                <div><label>资产状态:{{ obj.get_device_status_id_display }}</label></div>
+                <div><label>机柜号:{{ obj.cabinet_num }}</label></div>
+                <div><label>机柜中序号:{{ obj.cabinet_order }}</label></div>
+                <div><label>IDC机房:{{ obj.idc }}</label></div>
+                <div><label>属于的业务线:{{ obj.business_unit }}</label></div>
+                <div><label>Tag:{{ obj.tag }}</label></div>
+                <div><label>更新日期:{{ obj.latest_date }}</label></div>
+                <div><label>创建日期:{{ obj.create_at }}</label></div>
+                <div><label>SN号:{{ obj.server.sn }}</label></div>
+                <div><label>制造商:{{ obj.server.manufacturer }}</label></div>
+                <div><label>管理IP:{{ obj.server.manage_ip }}</label></div>
+                <div><label>系统版本:{{ obj.server.os_version }}</label></div>
+                <div><label>CPU型号:{{ obj.server.cpu_model }}</label></div>
+                <div>...</div>
+
+
+
+        </div>
+
+    </div>
+
+
+
+{% endblock %}
+{% block js_cmdb %}
+    <script>
+        $(function () {
+            $.initMenu('#menu_asset');
+            {#nbDataList('/cmdb/assets/');#}
+        });
+    </script>
+{% endblock %}

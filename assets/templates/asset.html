@@ -1,0 +1,16 @@
+
+
+{% extends 'base_template_cmdb.html' %}
+
+{% block title_menu %}
+             <li class="active">资产信息</li>
+        {% endblock %}
+
+{% block js_cmdb %}
+    <script>
+        $(function () {
+            $.initMenu('#menu_asset');
+            nbDataList('/cmdb/assets/');
+        });
+    </script>
+{% endblock %}

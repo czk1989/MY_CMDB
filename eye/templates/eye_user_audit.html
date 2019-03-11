@@ -1,0 +1,24 @@
+{% extends 'layout/eye_layout.html' %}
+
+
+{% block conent %}
+    <ol class="breadcrumb" style="margin-bottom: 0;">
+        <li><a href="/eye/">首页</a></li>
+        <li class="active">审计</li>
+    </ol>
+
+
+    <div style="padding: 5px 8px;">
+
+        <ul>
+            {% for dir_name in log_dirs %}
+                <li><a class="btn-link" href="{% url 'eye:audit_log_date' dir_name %}">{{ dir_name }}</a></li>
+            {% endfor %}
+        </ul>
+
+    </div>
+
+
+
+{% endblock %}
+

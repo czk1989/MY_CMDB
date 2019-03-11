@@ -1,0 +1,14 @@
+{% extends 'base_template_cmdb.html' %}
+
+{% block title_menu %}
+             <li class="active">IDC管理</li>
+        {% endblock %}
+
+{% block js_cmdb %}
+    <script>
+        $(function () {
+            $.initMenu('#menu_idc');
+            nbDataList('/cmdb/idc_info/');
+        });
+    </script>
+{% endblock %}

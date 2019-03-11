@@ -1,0 +1,56 @@
+{% extends 'layout/monitor_layout.html' %}
+
+
+{% block conent %}
+<div class="row">
+
+<ol class="breadcrumb">
+    <li><a href="{% url 'monitor:monitor_index' %}">Home</a></li>
+    <li><a href="{% url 'monitor:hosts' %}">主机列表</a></li>
+    <li class="active">主机监控详情</li>
+</ol>
+<div style="padding-left: 100px">主机:{{ host_obj.asset.server.hostname }}[{{ host_obj.asset.server.manage_ip }}]</div>
+<div class="tab-base">
+
+        <!--Nav Tabs-->
+        <ul class="nav nav-tabs">
+
+            <li class="active">
+                <a data-toggle="tab" href="#host-graphs" aria-expanded="false">趋势图</a>
+            </li>
+            <li class="">
+                <a data-toggle="tab" href="#triggers-tab" aria-expanded="false">已触发事件</a>
+            </li>
+            <li class="">
+                <a data-toggle="tab" href="#demo-lft-tab-3" aria-expanded="true">最近数据</a>
+            </li>
+            <li class="">
+                <a data-toggle="tab" href="#demo-lft-tab-3" aria-expanded="true">脚本</a>
+            </li>
+        </ul>
+
+        <!--Tabs Content-->
+        <div class="tab-content">
+            <div id="triggers-tab" class="tab-pane fade ">
+                <h4 class="text-thin">First Tab Content</h4>
+                {% include 'trigger_list.html' %}
+            </div>
+            <div id="host-graphs" class=" fade active in">
+
+
+            </div>
+            <div id="demo-lft-tab-3" class="tab-pane fade ">
+                <h4 class="text-thin">Third Tab Content</h4>
+                <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit.</p>
+            </div>
+        </div>
+    </div>
+
+</div>
+{% endblock %}
+
+
+{% block js %}
+
+
+{% endblock %}

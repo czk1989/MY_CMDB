@@ -1,0 +1,57 @@
+{% extends 'layout/eye_layout.html' %}
+
+
+
+
+{% block conent %}
+    <ol class="breadcrumb" style="margin-bottom: 0;">
+        <li><a href="/eye/">首页</a></li>
+        <li class="">审计</li>
+        <li class="active">审计日志表</li>
+    </ol>
+
+
+    <div style="padding: 5px 8px;">
+
+         <table class="table ">
+            <thead>
+                <tr>
+                    <th>Session ID</th>
+                    <th>堡垒机用户</th>
+                    <th>登录时间</th>
+                    <th>登录主机</th>
+                    <th>登录用户名</th>
+                    <th>停留时间</th>
+                    <th>执行命令数</th>
+
+                </tr>
+            </thead>
+
+            <tbody>
+                {% for session_obj in session_objs %}
+                    <tr>
+                        <td><a class="btn-link" href="{% url 'eye:audit_log_detail' log_date session_obj.id  %}"> {{ session_obj.id }} </a></td>
+                        <td>{{ session_obj.user.name }}</td>
+                        <td>{{ session_obj.date }}</td>
+                        <td>{{ session_obj.bind_host.host.hostname }}({{ session_obj.bind_host.host.ip_addr }})</td>
+                        <td>{{ session_obj.bind_host.remote_user.username }}</td>
+                        <td>...</td>
+                        <td>...</td>
+                    </tr>
+                {% endfor %}
+            </tbody>
+
+        </table>
+
+    </div>
+
+
+
+{% endblock %}
+
+
+
+
+
+
+

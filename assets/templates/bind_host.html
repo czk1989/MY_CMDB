@@ -1,0 +1,14 @@
+{% extends 'base_template_cmdb.html' %}
+
+{% block title_menu %}
+             <li class="active">资产用户</li>
+        {% endblock %}
+
+{% block js_cmdb %}
+    <script>
+        $(function () {
+            $.initMenu('#menu_bindhost');
+            nbDataList('/cmdb/bind_hosts/');
+        });
+    </script>
+{% endblock %}
